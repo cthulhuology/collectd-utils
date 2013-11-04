@@ -1,0 +1,14 @@
+#!/bin/bash
+#
+# Install visageon ubunutu
+#
+git clone https://github.com/auxesis/visage.git
+apt-get install build-essential librrd-ruby ruby ruby-dev rubygems
+apt-get install libssl-dev
+apt-get install libxslt-dev
+apt-get install librrd-dev
+apt-get install collectd
+gem install bundler
+bundle
+
+./bin/visage-app start > /dev/null 2>&1 &
